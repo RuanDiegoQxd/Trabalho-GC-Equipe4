@@ -11,7 +11,7 @@ pipeline {
 
         stage('step 2') {
           steps {
-            mail(subject: '[jenkins] Iniciando pipeline', body: 'Estamos iniciando uma pipeline')
+            mail(subject: '[jenkins] Iniciando pipeline', body: 'Estamos iniciando uma pipeline', to: 'Ruandgn@alu.ufc.br', charset: 'UTF-8')
           }
         }
 
