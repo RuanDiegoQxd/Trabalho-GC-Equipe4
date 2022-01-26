@@ -1,9 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('') {
-      steps {
-        echo 'eata é a pipeline'
+    stage('step1') {
+      parallel {
+        stage('error') {
+          steps {
+            echo 'eata Ã© a pipeline'
+          }
+        }
+
+        stage('step 2') {
+          steps {
+            mail(subject: '[jenkins] Iniciando pipeline', body: 'Estamos iniciando uma pipeline')
+          }
+        }
+
       }
     }
 
